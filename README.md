@@ -10,3 +10,6 @@
 - Multiple Matches: Correctly identifies all starting indices of the pattern
 - No Match: Returns an empty list, confirming no false positives or infinite loops
 - Repetitive Patterns: Handles self-overlapping patterns efficiently due to the LPS array
+
+# Conclusion
+#### The implementation of the KMP algorithm successfully demonstrates an efficient solution for the string matching problem. By utilizing the precomputed LPS Array, the algorithm eliminates redundant character comparisons. This design ensures highly optimized performance by avoiding unnecessary backtracking of the text pointer. The testing process, spanning short, medium, and long strings with single, multiple, and overlapping matches, confirms the algorithm's robustness and correctness. KMP is proven to be superior to naive search methods in practice, making it the preferred choice for scenarios requiring high-performance string processing.
