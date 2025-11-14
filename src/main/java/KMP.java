@@ -27,5 +27,35 @@ public class KMP {
         return lps;
     }
 
+    public List<Integer> KMPSearch(String text, String pattern) {
+        List<Integer> foundIndices = new ArrayList<>();
+        int N = text.length();
+        int M = pattern.length();
 
+        if (M == 0) {
+            return foundIndices;
+        }
+        int[] lps = computeLPSArray(pattern);
+        int i = 0;
+        int j = 0;
+
+        while (i < N) {
+            if (pattern.charAt(j) == text.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == M) {
+                foundIndices.add(i - j);
+                j = lps[j - 1];
+            } else if (i < N && pattern.charAt(j) != text.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+        return foundIndices;
+    }
 }
