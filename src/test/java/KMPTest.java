@@ -18,7 +18,7 @@ class KMPTest {
     void testMediumString_MultipleOverlappingMatches() {
         String text = "AAAAABAAAAAAAAA";
         String pattern = "AAA";
-        List<Integer> expected = List.of(0, 1, 2, 8, 9, 10, 11);
+        List<Integer> expected = List.of(0, 1, 2, 6, 7, 8, 9, 10, 11, 12);
         assertEquals(expected, kmp.KMPSearch(text, pattern), "Should find all overlapping matches");
     }
 
